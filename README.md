@@ -1,9 +1,15 @@
-# Mammary_Gland_Involution
+# LUMENA Toolkit
 
-QuPath scripts and classifiers for mammary gland involution analysis
+Welcome to the LUMENA toolkit for quantifying H&E-stained mammary gland tissues.
 
-zip file contains QuPath groovy scripts and associated classifiers for measuring fat, collagen, endothelium (gland) and intraluminal content (milk) of H&E stained mammary gland sections.
+## LUMENA pixel classifier (QuPath)
 
-Classifiers were trained on data collected from multiple batches and imaged on the same Leica Aperio imaging system.
+The pixel classifiers for LUMENA work with [QuPath v6.0](). The classifiers are likely to work with QuPath v7.0 but have not been tested yet.
 
-QuPath v5.1
+### How to use LUMENA in your QuPath project
+
+Install QuPath using the link above. After creating a QuPath project, download the 
+
+## Citation
+
+If you use LUMENA in your publication, kindly cite our github repository. 
