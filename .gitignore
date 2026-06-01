@@ -1,7 +1,7 @@
 .vscode
 __pycache__
 .ipynb_checkpoints
-Image_Classifier_Attention/*.csv
+Image_Classifier_Attention
 comprehensive_test_output
 Map_Registration/Maps/*
 Map_Registration/Masks/*
@@ -11,3 +11,4 @@ Map_Registration/*.tfm
 Map_Registration/*.png
 *.csv
 *.png
+.claude
