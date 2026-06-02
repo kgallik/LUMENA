@@ -24,11 +24,17 @@ Details on running scripts in batch within QuPath projects can be found in the o
 
 ## Tissue reconstruction for LUMENA
 
-Due to the large size of lactating mammary glands, imaging sections from these tissues using slide scanners requires cutting the samples into smaller regions. We created a pipeline to reconstruct these regions leveraging reference maps and the python package [Simple-ITK]().
+Due to the large size of lactating mammary glands, imaging sections from these tissues using slide scanners requires cutting the samples into smaller regions. We created a pipeline to reconstruct these regions leveraging reference maps and the python package [Simple-ITK](https://simpleitk.org/).
 
 ### Requirements for tissue reconstruction
 
-Successful reconstruction first starts with keeping a reference of how the tissues were cut into smaller regions and their orientation when placed on the slide.
+Successful reconstruction first starts with keeping a reference of how the tissues were cut into smaller regions and their orientation when placed on the slide. Data frames containing these metadata are required along with reference maps of the region layouts.
+
+LUMENA reconstruction assumes there is an exported data frame generated from using LUMENA Tiles in QuPath containing the X,Y coordinates of the tiles along with relevant measurements from the analysis and metadata for appropriate grouping.
+
+More details can be found in the [LUMENA reconstruction folder](LUMENA_Reconstruction).
+
+Currently, LUMENA reconstruction does not run in parallel, but some of the processes of SimpleITK take advantage of multithread processing. We recommend 32 GBs of RAM or greater for optimal speed. In recent pipeline runs, a batch of ~475 images (accounting for 118 glands) was processed in less than 20 minutes using an HPC node with a minimum of 40 cores and 128 GBs RAM.
 
 ## Citation
 
