@@ -1,11 +1,11 @@
 # Tissue reconstruction with LUMENA data
 
-Requirements:
+## Required material/resources:
 
 - Python env with Python3.10 or greater
   - Use [requirements.txt](requirements.txt) to set up required dependencies
 - Recommended minimum RAM: 32GB
-- Downsampled images exported from QuPath with the annotation (tissue) mask and two cardinal points (East and North) as grey scale label images
+- Downsampled images exported from QuPath with the annotation (tissue) mask and two cardinal points (East and North) as grey scale label images. Use the [batch export script](Batch_label_img_export_QUiet.groovy) modified from the [UW-LOCI's QUiet extension](https://github.com/uw-loci/qupath-extension-image-export-toolkit)
 - Reference maps for reconstruction, should have distinct grey values for each region in reference map
 - .csv key for the grey values corresponding to the img exports from QuPath and the grey values for the reference map regions (may need to create this by opening the reference maps in an image viewer like ImageJ or Napari, convert to grey scale and record the grey values in the key)
 - A csv data frame containing the following metadata for the annotations (generated using the annotation level measurement export from QuPath with added columns):
@@ -25,3 +25,31 @@ Requirements:
   - `Tiles_Centroid_Y_um`: used for calculating the transformed location after registering the tissue to the reference map
   - `Tiles_AnimalID`: Unique ID of the animal the sample originated from, used to organize exported data
   - `Tiles_Gland_side`: Used to organize images by the gland source to reconstruct the left and right glands separately
+
+## Create Python env:
+
+conda python env manager
+
+```bash
+conda create -n LUMENA python=3.10
+conda activate LUMENA
+#should work with new versions of python as well
+```
+
+or
+
+venv
+
+```bash
+python3 -m venv LUMENA
+source LUMENA/bin/activate
+```
+
+Install dependencies
+
+```bash
+pip install -r lumena_requirements.txt
+```
+
+## To run LUMENA reconstruction:
+
