@@ -16,12 +16,14 @@ class Resize_Maps:
     
     def __init__(
             self,
-            avg_size_HW: tuple,
+            avg_size_H: float,
+            avg_size_W: float,
             path_to_maps: str,
             save_loc: str,
             spacing: float,
     ):
-        self.avg_size_HW = avg_size_HW
+        self.avg_size_H = avg_size_H
+        self.avg_size_W = avg_size_W
         self.path_to_maps = path_to_maps
         self.save_loc = save_loc
         self.spacing = spacing
@@ -39,7 +41,8 @@ class Resize_Maps:
     
     def resize_maps(self,
                 map_arr,
-                avg_size_HW,
+                avg_size_H,
+                avg_size_W,
                 target_spacing):
         """ 
         Resizes image based on target spacing
@@ -50,8 +53,7 @@ class Resize_Maps:
         props = sk.measure.regionprops(map_labels)
         map_region = max(props, key=lambda p: p.area)
         area_bbox = map_region.area_bbox
-        avgH, avgW = avg_size_HW
-        avg_area = avgH*avgW
+        avg_area = avg_size_H*avg_size_W
         spacing_um = np.sqrt(round((avg_area / area_bbox) * 10000**2, 4))
         zoom = spacing_um/target_spacing
         resized_map = sc.ndimage.zoom(map_arr, zoom,order=0)
@@ -70,13 +72,14 @@ class Resize_Maps:
         map_names, map_arrays = self.load_map_arrs(self.path_to_maps)
         resized_maps = []
         for map_arr in tqdm(map_arrays):
-           resized_map = self.resize_maps(map_arr,self.avg_size_HW,self.spacing)
+           resized_map = self.resize_maps(map_arr,self.avg_size_H,self.avg_size_W,self.spacing)
            resized_maps.append(resized_map)
         self.save_maps(self.save_loc,map_names,resized_maps)
 
 def parse_args():
     parser = argparse.ArgumentParser(description='Resize Maps to desired spacing, use the same physical pixel size as the exported masks from QuPath')
-    parser.add_argument('--avg_size', type=tuple, required=True, help='average height and width of the samples to reconstruct in cm (Height, Width)')
+    parser.add_argument('--avg_size_H', type=float, required=True, help='average height of the samples to reconstruct in cm')
+    parser.add_argument('--avg_size_W', type=float, required=True, help='average width of the samples to reconstruct in cm')
     parser.add_argument('--map_path', type=str, required=True, help='Path to original maps (.png)')
     parser.add_argument('--save_loc', type=str, required=True, help='Path to save resized maps')
     parser.add_argument('--spacing', type=float, required=True, help='resize map to this pixel spacing in um')
@@ -85,7 +88,7 @@ def parse_args():
 
 def main():
     args = parse_args()
-    resize_maps = Resize_Maps(avg_size_HW=args.avg_size,path_to_maps=args.map_path,save_loc=args.save_loc,spacing=args.spacing)
+    resize_maps = Resize_Maps(avg_size_H=args.avg_size_H,avg_size_W=args.avg_size_W,path_to_maps=args.map_path,save_loc=args.save_loc,spacing=args.spacing)
     resize_maps.run()
 
 if __name__ == '__main__':
