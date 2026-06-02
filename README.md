@@ -40,4 +40,4 @@ Currently, LUMENA reconstruction does not run in parallel, but some of the proce
 
 ## Citation
 
-If you use LUMENA in your publication, kindly this GitHub repository, [QuPath](https://qupath.readthedocs.io/en/0.6/docs/intro/citing.html), and any other extensions used.
+If you use LUMENA in your publication, kindly cite this GitHub repository, [QuPath](https://qupath.readthedocs.io/en/0.6/docs/intro/citing.html), and any other extensions used.
