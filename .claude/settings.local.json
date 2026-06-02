@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -c \":*)",
-      "Bash(python -c \"import json; nb=json.load\\(open\\(''e:/GitHub_Repos/Mammary_Gland_Involution/Map_Registration/Map_registration_V3.ipynb''\\)\\); cells=[c for c in nb[''cells''] if any\\(''ReadTransform'' in s for s in c[''source'']\\)]; [print\\(''CELL'',i,'':\\\\n'',''''.join\\(c[''source'']\\),''\\\\n---OUTPUTS---\\\\n'',c.get\\(''outputs'',''''\\)\\) for i,c in enumerate\\(cells\\)]\")"
-    ]
-  }
-}
