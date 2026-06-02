@@ -1,5 +1,7 @@
 # LUMENA Toolkit
 
+![LUMENA logo]('imgs/Logo_LUMENA.png')
+
 Welcome to the LUMENA toolkit for quantifying H&E-stained mammary gland tissues. This toolkit includes a pixel classifier and batch analysis script to use in QuPath for quantifying the extra cellular matrix, epithelial, intralumenal content, and adipose tissue components in H&E stained mammary gland tissue sections. The toolkit also includes a registration pipeline to reassemble large tissues to a common coordinate system.
 
 *At present, the current version of LUMENA does require using QuPath and Python (with user generated keys and reference points) to leverage the entire toolkit, future directions include streamlining.*
