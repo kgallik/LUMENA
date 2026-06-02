@@ -26,6 +26,8 @@ Details on running scripts in batch within QuPath projects can be found in the o
 
 Due to the large size of lactating mammary glands, imaging sections from these tissues using slide scanners requires cutting the samples into smaller regions. We created a pipeline to reconstruct these regions leveraging reference maps and the python package [Simple-ITK](https://simpleitk.org/).
 
+Cardinal point references for East (medial) and North (dorsal) need to be added for each tissue in the QuPath project. These will be exported with the tissue masks and used as reference points in the reconstruction pipeline. Use the centroid script to mark the centroid of each tissue annotation and a rectangle annotation with interactive transform to aid in placing the Each and North points perpendicularly.
+
 ### Requirements for tissue reconstruction
 
 Successful reconstruction first starts with keeping a reference of how the tissues were cut into smaller regions and their orientation when placed on the slide. Data frames containing these metadata are required along with reference maps of the region layouts.
