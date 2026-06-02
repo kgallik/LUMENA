@@ -10,5 +10,4 @@ Map_Registration/*.csv
 Map_Registration/*.tfm
 Map_Registration/*.png
 *.csv
-*.png
 .claude/**
