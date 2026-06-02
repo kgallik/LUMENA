@@ -33,7 +33,7 @@ class Registration:
         self.path_to_grey_value_key = path_to_grey_value_key
         self.path_to_tile_df = path_to_tile_df
         self.path_to_anno_df = path_to_anno_df
-        self.genotype = genotype if genotype != None else 'WT'
+        self.genotype = genotype
 
     def set_up_pipeline(
             self,
