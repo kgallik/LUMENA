@@ -1,6 +1,6 @@
 # Tissue reconstruction with LUMENA data
 
-## Required material/resources:
+## Required material/resources
 
 - Python env with Python3.10 or greater
   - Use [requirements.txt](requirements.txt) to set up required dependencies
@@ -74,3 +74,11 @@ python LUMENA_reconstruction_and_coordinate_transform.py --map_path /path/to/res
 Use the `--help` flag for additional argument descrptions.
 
 The LUMENA reconstruction and coordinate transform pipeline will create save directories within the `tissue_mask_path` containing intermediate registration processes, any failures in the registration, plots of the reconstructed tissue masks over layed onto the reference map per gland, reconstructed tile coordinates in a scatter plot per gland, and csv data frames of the tile data with added columns for the transformed X,Y coordinates per animal.
+
+### Earlier iterations of LUMENA reconstruction
+
+We made several iterations of the reconstruction pipeline which are available to browse in the [map registration iteration folder](../Map_Registration_Iterations). These versions are not full production but do contain different approaches used for registering the tissue masks to their respective regions, these may be useful for different types of reconstruction goals and can be integrated into the full production version with some code editing.
+
+## Collaboration
+
+If you would like to collaborate on creating a more customized or flexible version of LUMENA, please reach out to us through GitHub!

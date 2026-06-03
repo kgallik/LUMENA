@@ -12,7 +12,7 @@ The pixel classifiers and batch analysis script for LUMENA work with [QuPath v6.
 
 ### How to use LUMENA in your QuPath project
 
-Install QuPath using the link above. After creating a QuPath project, download and extract [LUMENA_pixel_classifiers.zip](/LUMENA_pixel_classifiers.zip). Place `LUMENA_pixel_classifier.json` into the pixel classifier folder `QuPath_project/classifiers/pixel_classifiers` and the `Run_LUMENA.groovy` and `Run_LUMENA_TILES.groovy` scripts into the scripts folder `QuPath_project/scripts` (create the scripts folder if it does not already exist).
+Install QuPath using the link above. After creating a QuPath project, download and extract [LUMENA_pixel_classifiers.zip](/LUMENA_pixel_classifiers.zip). Place `LUMENA_pixel_classifier.json` into the pixel classifier folder `QuPath_project/classifiers/pixel_classifiers` and the `Run_LUMENA.groovy` and `Run_LUMENA_TILES.groovy` scripts into the scripts folder `QuPath_project/scripts` (create the scripts folder if it does not already exist). **The generalized LUMENA model is not currently available on this GitHub Repo as of Jun 3,2026. This model will be available in the near future.**
 
 After adding in the H&E-stained tissues, create annotation outlines for all tissues to be analyzed. We used the [QuPath plugin SAM](https://github.com/ksugar/qupath-extension-sam) with [GPU acceleration](https://github.com/ksugar/samapi) for creating the outlines, but a simple threshold based classifier could work as well depending on the tissues.
 
