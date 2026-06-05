@@ -12,11 +12,16 @@ The pixel classifiers and batch analysis script for LUMENA work with [QuPath v6.
 
 ### How to use LUMENA in your QuPath project
 
-Install QuPath using the link above. After creating a QuPath project, download and extract [LUMENA_pixel_classifiers.zip](/LUMENA_pixel_classifiers.zip). Place `LUMENA_pixel_classifier.json` into the pixel classifier folder `QuPath_project/classifiers/pixel_classifiers` and the `Run_LUMENA.groovy` and `Run_LUMENA_TILES.groovy` scripts into the scripts folder `QuPath_project/scripts` (create the scripts folder if it does not already exist). **The generalized LUMENA model is not currently available on this GitHub Repo as of Jun 3,2026. This model will be available in the near future.**
+Install QuPath using the link above. After creating a QuPath project, download and extract [LUMENA_pixel_classifiers.zip](/LUMENA_pixel_classifiers.zip). Place `LUMENA_pixel_classifier.json` into the pixel classifier folder `QuPath_project/classifiers/pixel_classifiers` and the `Run_LUMENA.groovy` and `Run_LUMENA_TILES.groovy` scripts into the scripts folder `QuPath_project/scripts` (create the scripts folder if it does not already exist).
+
+Models available:
+
+- LUMENA_pixel_classifier - trained on non-pathological regions of rat mammary glands from multiple time points of involution. Data representation includes WT and NF1 mutant backgrounds.
+- LUMENA-CS_pixel_classifier - trained on the same training data as the LUMENA_pixel_classifier with a random selection of non-pathological regions of human mammary gland samples acquired from a public data repository.
 
 After adding in the H&E-stained tissues, create annotation outlines for all tissues to be analyzed. We used the [QuPath plugin SAM](https://github.com/ksugar/qupath-extension-sam) with [GPU acceleration](https://github.com/ksugar/samapi) for creating the outlines, but a simple threshold based classifier could work as well depending on the tissues.
 
-To only get whole tissue measurements from LUMENA, open `Run_LUMENA.groovy` and run as a batch on the desired images in your project.
+To only get whole tissue measurements from LUMENA, open `Run_LUMENA.groovy` and run as a batch on the desired images in your project. 
 
 To create tiles with classifications, open the `Run_LUMENA_TILES.groovy` script and run as a batch on the desired images in your project.
 

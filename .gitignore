@@ -11,3 +11,4 @@ Map_Registration/*.tfm
 Map_Registration/*.png
 *.csv
 .claude/**
+LUMENA_pixel_classifiers/
